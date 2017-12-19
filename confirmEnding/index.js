@@ -1,5 +1,6 @@
 function confirmEnding(str, target) {
-  if (str.substr(-target.length) === target) {   
+    
+   if (str.substr(-target.length) === target) {
     // psuedo code
     // 1. if string sub string ends with target string 
     // 2. and it matches
