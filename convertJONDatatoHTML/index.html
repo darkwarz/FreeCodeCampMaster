@@ -1,0 +1,45 @@
+
+<script>
+  $(document).ready(function() {
+
+    $("#getMessage").on("click", function() {
+      $.getJSON("/json/cats.json", function(json) {
+
+        var html = "";
+        // Only change code below this line.
+        
+        json.forEach(function(val) { // for each loop used with json
+  var keys = Object.keys(val); // variable object for keys
+  html += "<div class = 'cat'>"; // loop that takes div class
+  keys.forEach(function(key) { //  for each look for keys variable
+    html += "<strong>" + key + "</strong>: " + val[key] + "<br>";
+  }); // algorithm for adding key and key value to html
+  html += "</div><br>";
+});
+        
+        // Only change code above this line.
+
+        $(".message").html(html);
+
+      });
+    });
+  });
+</script>
+
+<div class="container-fluid">
+  <div class = "row text-center">
+    <h2>Cat Photo Finder</h2>
+  </div>
+  <div class = "row text-center">
+    <div class = "col-xs-12 well message">
+      The message will go here
+   </div>
+  </div>
+  <div class = "row text-center">
+    <div class = "col-xs-12">
+      <button id = "getMessage" class = "btn btn-primary">
+        Get Message
+      </button>
+    </div>
+  </div>
+</div>
